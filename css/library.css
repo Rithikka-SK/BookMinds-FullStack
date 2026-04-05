@@ -1,0 +1,41 @@
+/* Category Section */
+.category-section {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+/* Horizontal Scroll Container */
+.book-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide Scrollbar (Chrome, Safari, Opera) */
+.book-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Book Card (In Library) */
+.book-card {
+  min-width: 200px;
+  background-color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Book - BookMinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page specific overrides for centering */
+        body {
+            background-color: var(--lavender);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container {
+            background-color: var(--white);
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 90%;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--deep-purple);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--charcoal);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        button[type="submit"] {
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookMinds</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <h2 class="form-header" id="form-title">Add New Book</h2>
+        <form id="add-book-form">
+            <!-- Hidden ID for Editing -->
+            <input type="hidden" id="book-id">
+
+            <div class="form-group"><label for="title">Book Title</label><input type="text" id="title" required placeholder="Book Title"></div>
+            <div class="form-group"><label for="author">Author</label><input type="text" id="author" placeholder="Author Name"></div>
+            <div class="form-group"><label for="category">Category</label><select id="category" required><option value="Finance">Finance</option><option value="Philosophy">Philosophy</option><option value="Self-Help">Self-Help</option><option value="Technology">Technology</option><option value="Fiction">Fiction</option><option value="Other">Other</option></select></div>
+            <div class="form-group"><label for="summary">Personal Summary</label><textarea id="summary" rows="6" required placeholder="Your personal summary..."></textarea></div>
+            
+            <button type="submit" class="btn-primary" id="save-btn">Save Book</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

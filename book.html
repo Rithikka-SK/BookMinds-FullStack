@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - BookMinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/book.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookMinds</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="favourites.html">Favourites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Back to Library</a>
+        
+        <header class="book-header">
+            <h1 id="book-title"></h1>
+            <span id="book-category" class="badge"></span>
+            <p id="book-author"></p>
+        </header>
+
+        <div id="book-summary" class="summary-box" contenteditable="true" placeholder="Type your summary here..."></div>
+        <button id="btn-save-summary" class="btn-primary hidden" style="margin-top: 20px;">Save Changes</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BookMinds. All rights reserved.</p>
+    </footer>
+    <script src="js/book.js"></script>
+</body>
+</html>

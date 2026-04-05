@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMinds - Track Your Reading Journey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookMinds</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="favourites.html">Favourites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Track Your Books</h1>
+        <p>Your personal journey through every page.</p>
+    </section>
+
+    <section class="container">
+        <div id="category-filter"></div>
+        <div id="book-grid"></div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="form-header" id="modal-title">Add New Book</h2>
+            <form id="book-form">
+                <input type="hidden" id="book-id">
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Author (Optional)">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" placeholder="e.g. Finance, Sci-Fi" required>
+                </div>
+                <div class="form-group">
+                    <label for="insight">One-line Insight (Optional)</label>
+                    <input type="text" id="insight">
+                </div>
+                <div class="form-group">
+                    <label for="summary">Personal Summary</label>
+                    <textarea id="summary" rows="5" placeholder="Personal Summary (Optional)"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-submit">Save Book</button>
+                    <button type="button" class="btn-cancel" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BookMinds. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - BookMinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookMinds</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="favourites.html">Favourites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-avatar">👤</div>
+            <h1 class="profile-name">Book Lover</h1>
+        </header>
+
+        <section class="stats-dashboard">
+            <div class="stat-card">
+                <h3>Total Books</h3>
+                <p id="stat-total" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Favorites</h3>
+                <p id="stat-favorites" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Categories Explored</h3>
+                <p id="stat-categories" class="stat-number">0</p>
+            </div>
+        </section>
+
+        <section class="settings-section danger-zone">
+            <h2>Danger Zone</h2>
+            <p>This action cannot be undone. This will permanently delete all your books and data.</p>
+            <button id="btn-reset" class="btn-delete">Reset Library Data</button>
+        </section>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

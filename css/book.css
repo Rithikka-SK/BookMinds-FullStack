@@ -1,0 +1,66 @@
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--deep-purple);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+.btn-back:hover {
+  text-decoration: underline;
+}
+
+.book-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#book-title {
+  font-size: 2.5rem;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+
+#book-author {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--deep-purple);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.summary-box {
+  background: #fff;
+  padding: 40px;
+  line-height: 1.8;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin-top: 20px;
+  min-height: 200px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.summary-box:focus {
+  border-color: var(--deep-purple);
+}
+
+.summary-box:empty:before {
+  content: attr(placeholder);
+  color: #aaa;
+  pointer-events: none;
+  display: block;
+}

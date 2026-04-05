@@ -1,0 +1,484 @@
+/* --- VARIABLES & RESET --- */
+:root {
+  /* Brand Colors */
+  --primary-lavender: #b497bd; /* Brand accents */
+  --primary-dark: #7f5ab3; /* Main Buttons & Headings */
+  --accent-coral: #ffb6a1; /* Highlights & Call-to-actions */
+  --mint-fresh: #a8e6cf; /* Success badges */
+
+  /* Backgrounds & Surfaces */
+  --bg-page: #f7f6fb; /* Off-white page background */
+  --bg-surface: #ffffff; /* Cards & Modals */
+
+  /* UI Lines & Text */
+  --border-muted: #e6e1ea; /* Dividers */
+  --text-primary: #222222; /* Main text (High readability) */
+  --text-muted: #6b6b6b; /* Meta info */
+
+  /* States */
+  --error: #e53e3e;
+  --warning: #ffb020;
+  --success: #2fa55a;
+
+  /* Legacy Mappings (for compatibility with other files) */
+  --primary: var(--primary-dark);
+  --secondary: var(--bg-page);
+  --accent: var(--accent-coral);
+  --text-dark: var(--text-primary);
+  --text-light: var(--text-muted);
+  --white: var(--bg-surface);
+  --deep-purple: var(--primary-dark);
+  --lavender: var(--primary-lavender);
+  --charcoal: var(--text-primary);
+  --blush: var(--accent-coral);
+  --light-gray: var(--border-muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-dark);
+}
+
+/* --- COMPONENTS (Navbar, Buttons) --- */
+.navbar {
+  background-color: var(--bg-surface);
+  color: var(--primary-dark);
+  border-bottom: 1px solid var(--border-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s;
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--primary-lavender);
+  color: var(--primary-dark);
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-lavender);
+  color: white;
+}
+
+.btn-sm {
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: opacity 0.2s;
+}
+
+.btn-sm:hover {
+  opacity: 0.9;
+}
+
+.btn-edit {
+  background-color: transparent;
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-edit:hover {
+  background-color: rgba(127, 90, 179, 0.12);
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: var(--error);
+  border: 1px solid var(--error);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: var(--error);
+  color: white;
+}
+
+/* --- HOME PAGE STYLES --- */
+.hero {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("../assets/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-lavender);
+  color: white;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Category Filter */
+#category-filter {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+}
+
+.category-btn {
+  background-color: var(--border-muted);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.category-btn:hover {
+  background-color: var(--primary-lavender);
+  color: white;
+}
+
+.category-btn.active {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* Book Grid */
+#book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Book Card Styles */
+.book-card {
+  background-color: var(--bg-surface);
+  border-radius: 10px;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.book-placeholder {
+  width: 100%;
+  height: 150px;
+  background-color: var(--primary-lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  background-color: var(--mint-fresh);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: auto;
+  color: var(--primary-dark);
+}
+
+.btn-heart {
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.btn-heart.active {
+  color: var(--accent-coral);
+}
+
+/* Add Book Card */
+.add-book-card {
+  border: 2px dashed var(--primary-lavender);
+  background-color: rgba(180, 151, 189, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--primary-dark);
+  min-height: 300px; /* Approximate height of populated cards */
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.add-book-card:hover {
+  background-color: var(--border-muted);
+}
+
+.add-icon {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  border-top: 1px solid var(--border-muted);
+  padding-top: 10px;
+}
+
+/* --- ADD BOOK FORM STYLES --- */
+.form-container {
+  background-color: var(--bg-surface);
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-muted);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 4px rgba(127, 90, 179, 0.12);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+button[type="submit"] {
+  flex: 1;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cancel {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.8rem;
+}
+
+.btn-cancel:hover {
+  text-decoration: underline;
+}
+
+/* --- MODAL STYLES --- */
+.hidden {
+  display: none !important;
+}
+
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--bg-surface);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--charcoal);
+}

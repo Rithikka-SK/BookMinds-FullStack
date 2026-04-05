@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourites - BookMinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <style>
+        /* Apply the same grid layout to the favorites container */
+        #favorites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookMinds</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="favourites.html">Favourites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>My Favourites</h1>
+        <div id="favorites-grid" class="book-grid"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BookMinds. All rights reserved.</p>
+    </footer>
+    <script src="js/favourites.js"></script>
+</body>
+</html>
